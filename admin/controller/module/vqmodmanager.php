@@ -189,6 +189,4 @@ class ControllerModuleVqmodManager extends Controller {
 
 		echo $message;
 	}
-	
-
 }

@@ -188,7 +188,11 @@ class ControllerModuleVqmodManager extends Controller {
 	
 	public function enableDisable() {
 
-		$vqmod_dir = DIR_APPLICATION.'../vqmod/';
+        $this->load->language('module/vqmodmanager');
+        $data['text_vqmodEnabled']         =   $this->language->get('text_vqmodEnabled');
+        $data['text_vqmodDisabled']         =   $this->language->get('text_vqmodDisabled');
+
+	    $vqmod_dir = DIR_APPLICATION.'../vqmod/';
 		$vqmod_xml_dir = $vqmod_dir.'xml/';
 		$file = $this->request->post['fileName'];
 		$path_parts = pathinfo($vqmod_xml_dir.$file);

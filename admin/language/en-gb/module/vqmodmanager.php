@@ -19,6 +19,9 @@ $_['text_vqmod']        = 'VqMod';
 $_['text_vqmodon']      = 'On';
 $_['text_vqmodoff']     = 'Off';
 
+$_['text_vqmodEnabled'] = 'Module Enabled';
+$_['text_vqmodDisabled']= 'Module Disabled';
+
 // Entry
 $_['entry_name']        = 'Module Name';
 $_['entry_title']       = 'Heading Title';

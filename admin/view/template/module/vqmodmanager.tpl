@@ -19,7 +19,7 @@
       <button type="button" class="close" data-dismiss="alert">&times;</button>
     </div>
     <?php } ?>
-    <!--
+
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title"><i class="fa fa-dashboard"></i> <?php echo $text_vqdetails; ?></h3>
@@ -27,6 +27,12 @@
       <div class="panel-body">
         <div class="table-responsive">
           <table class="table table-bordered table-hover">
+            <thead>
+              <tr>
+                <td>File</td>
+                <td>Status</td>
+              </tr>
+            </thead>
             <tbody>
               <?php
                 foreach ($vqmods as $vqmods_key => $vqmods_value) {
@@ -56,7 +62,6 @@
         </div>
       </div>
     </div>
-    -->
 
     <div class="panel panel-default">
       <div class="panel-heading">

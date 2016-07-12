@@ -108,7 +108,7 @@ class ControllerModuleVqmodManager extends Controller {
 		if (file_exists(DIR_APPLICATION . '../vqmod/xml/vqmod_opencart.xml')) {
 			$data['vqmods']['VQmod'] = 1;
 		} else {
-			$data['vqstatus'] = 0;
+			$data['vqmods']['VQmod'] = 0;
 		}
 
 		if (file_exists(DIR_APPLICATION . '../vqmod/checked.cache')) {

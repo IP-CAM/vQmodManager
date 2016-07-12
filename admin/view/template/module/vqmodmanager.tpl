@@ -29,9 +29,9 @@
           <table class="table table-bordered table-hover">
             <thead>
               <tr>
-                <td>File</td>
-                <td>Status</td>
-                <td>Action</td>
+                <td><?php echo $text_file; ?></td>
+                <td><?php echo $text_status; ?></td>
+                <td><?php echo $text_action; ?></td>
               </tr>
             </thead>
             <tbody>
@@ -44,17 +44,17 @@
                     <?php 
                       if($vqmods_value) {
                     ?>
-                      <span class="btn btn-sm btn-success">Active</span>
+                      <span class="btn btn-sm btn-success"><?php echo $text_active; ?></span>
                     <?php
                       } else {
                     ?>
-                      <span class="btn btn-sm btn-danger">Inactive</span>
+                      <span class="btn btn-sm btn-danger"><?php echo $text_inactive; ?></span>
                     <?php 
                       }
                     ?>
                   </td>
                   <td>
-                    <span class="btn btn-sm btn-danger">Purge Cache</span>
+                    <span class="btn btn-sm btn-danger"><?php echo $text_purge; ?></span>
                   </td>
                 </tr>
               <?php
@@ -75,9 +75,9 @@
           <table class="table table-bordered table-hover">
             <thead>
               <tr>
-                <td class="text-left">VqMod</td>
-                <td class="text-left">Status</td>
-                <td class="text-left">Action</td>
+                <td class="text-left"><?php echo $text_vqmod; ?></td>
+                <td class="text-left"><?php echo $text_status; ?></td>
+                <td class="text-left"><?php echo $text_action; ?></td>
               </tr>
             </thead>
             <tbody>
@@ -91,16 +91,26 @@
                         if($vxml_value['extension'])
                         {
                       ?>
-                        <span class="btn btn-sm btn-success">Active</span>
+                        <span class="btn btn-sm btn-success"><?php echo $text_active; ?></span>
                       <?php
                         } else {
                       ?>  
-                      <span class="btn btn-sm btn-danger">Inactive</span>
+                      <span class="btn btn-sm btn-danger"><?php echo $text_inactive; ?></span>
                       <?php
                         }
                       ?>
                     </td>
-                    <td class="text-left"><input type="checkbox" <?php echo $vxml_value['extension'] ? 'checked' : ''; ?> data-toggle="toggle" data-size="mini" data-onstyle="success" data-offstyle="danger" class="togglecontrol" data-file="<?php echo $vxml_value['file']; ?>"></td>
+                    <td class="text-left">
+                      <input type="checkbox" <?php echo $vxml_value['extension'] ? 'checked' : ''; ?>
+                             data-toggle = "toggle"
+                             data-size = "mini"
+                             data-onstyle = "success"
+                             data-offstyle = "danger"
+                             class = "togglecontrol"
+                             data-file = "<?php echo $vxml_value['file']; ?>">
+                             data-on = "<?php echo $text_vqmodon; ?>"
+                             data-off = "<?php echo $text_vqmodoff; ?>"
+                    </td>
                   </tr>              
               <?php
                 }

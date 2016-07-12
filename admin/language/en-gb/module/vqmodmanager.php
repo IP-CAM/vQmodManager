@@ -8,6 +8,16 @@ $_['text_success']      = 'Success: You have modified HTML Content module!';
 $_['text_allmodules']   = 'All Modules';
 $_['text_vqdetails']    = 'VqMod Status';
 
+$_['text_active']       = 'Active';
+$_['text_inactive']     = 'Inactive';
+
+$_['text_file']         = 'File';
+$_['text_status']       = 'Status';
+$_['text_action']       = 'Action';
+$_['text_purge']        = 'Purge Cache';
+$_['text_vqmod']        = 'VqMod';
+$_['text_vqmodon']      = 'On';
+$_['text_vqmodoff']     = 'Off';
 
 // Entry
 $_['entry_name']        = 'Module Name';

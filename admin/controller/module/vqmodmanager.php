@@ -9,21 +9,30 @@ class ControllerModuleVqmodManager extends Controller {
 
 		$this->load->model('extension/module');
 
-		$data['heading_title'] = $this->language->get('heading_title');
+		$data['heading_title']      =   $this->language->get('heading_title');
 
-		$data['text_allmodules'] = $this->language->get('text_allmodules');
-		$data['text_vqdetails']  = $this->language->get('text_vqdetails');
+		$data['text_allmodules']    =   $this->language->get('text_allmodules');
+		$data['text_vqdetails']     =   $this->language->get('text_vqdetails');
+        $data['text_active']        =   $this->language->get('text_active');
+        $data['text_inactive']      =   $this->language->get('text_inactive');
+        $data['text_file']          =   $this->language->get('text_file');
+        $data['text_status']        =   $this->language->get('text_status');
+        $data['text_action']        =   $this->language->get('text_action');
+        $data['text_purge']         =   $this->language->get('text_purge');
+        $data['text_vqmod']         =   $this->language->get('text_vqmod');
+        $data['text_vqmodon']       =   $this->language->get('text_vqmodon');
+        $data['text_vqmodoff']      =   $this->language->get('text_vqmodoff');
 
-		$data['text_enabled'] = $this->language->get('text_enabled');
-		$data['text_disabled'] = $this->language->get('text_disabled');
+		$data['text_enabled']       =   $this->language->get('text_enabled');
+		$data['text_disabled']      =   $this->language->get('text_disabled');
 
-		$data['entry_name'] = $this->language->get('entry_name');
-		$data['entry_title'] = $this->language->get('entry_title');
-		$data['entry_description'] = $this->language->get('entry_description');
-		$data['entry_status'] = $this->language->get('entry_status');
+		$data['entry_name']         =   $this->language->get('entry_name');
+		$data['entry_title']        =   $this->language->get('entry_title');
+		$data['entry_description']  =   $this->language->get('entry_description');
+		$data['entry_status']       =   $this->language->get('entry_status');
 
-		$data['button_save'] = $this->language->get('button_save');
-		$data['button_cancel'] = $this->language->get('button_cancel');
+		$data['button_save']        =   $this->language->get('button_save');
+		$data['button_cancel']      =   $this->language->get('button_cancel');
 
 		if (isset($this->error['warning'])) {
 			$data['error_warning'] = $this->error['warning'];

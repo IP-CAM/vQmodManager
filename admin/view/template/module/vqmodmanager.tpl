@@ -145,6 +145,9 @@ $('#language a:first').tab('show');
       url: '<?php echo $allmodsController; ?>',
       success: function (data) {
         data = $.parseJSON(data);
+        $.each(function(i,v) {
+            console.log(i,'-',v);
+        });
         console.log(data);
       }
     });

@@ -86,7 +86,7 @@
                     <td>                    
                       <?php
                         if($vxml_value['extension'] && $vqmods_value)
-                        {
+                        { echo $vqmods_value;
                       ?>
                         <span class="btn btn-sm btn-success">Active</span>
                       <?php

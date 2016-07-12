@@ -113,7 +113,7 @@ class ControllerModuleVqmodManager extends Controller {
 		/* Vqmod Logic Start */
 
 		$data['ed_controller_url'] = $this->config->get('config_url').'admin/index.php?route=module/vqmodmanager/enableDisable&token='.$this->session->data['token'];
-        $data['$allmodsController'] = $this->config->get('config_url').'admin/index.php?route=module/vqmodmanager/moduleStatus&token='.$this->session->data['token'];
+        $data['allmodsController'] = $this->config->get('config_url').'admin/index.php?route=module/vqmodmanager/moduleStatus&token='.$this->session->data['token'];
 
 		if (file_exists(DIR_APPLICATION . '../vqmod/xml/vqmod_opencart.xml')) {
 			$data['vqmods']['VQmod'] = 1;

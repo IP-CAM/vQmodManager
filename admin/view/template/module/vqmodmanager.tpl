@@ -140,19 +140,6 @@ $('#language a:first').tab('show');
     });
   });
 
-  $(document).ready(function(ev){
-    $.ajax({
-      url: '<?php echo $allmodsController; ?>',
-      success: function (data) {
-        data = $.parseJSON(data);
-        $.each(data,function(i,v) {
-            console.log(v['id']);
-        });
-        console.log(data);
-      }
-    });
-  })
-
 </script>
 
 <?php echo $footer; ?>

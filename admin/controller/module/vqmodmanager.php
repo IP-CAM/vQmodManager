@@ -195,6 +195,14 @@ class ControllerModuleVqmodManager extends Controller {
 			$message = 'Enabled';
 		}
 
-		echo $message;
+        $this->session->data['success'] = $message;
+
+        if (isset($this->session->data['success'])) {
+            $data['success'] = $this->session->data['success'];
+
+            unset($this->session->data['success']);
+        } else {
+            $data['success'] = '';
+        }
 	}
 }

@@ -54,7 +54,7 @@
                     ?>
                   </td>
                   <td>
-                    <span class="btn btn-sm btn-danger">Delete Cache</span>
+                    <span class="btn btn-sm btn-danger">Purge Cache</span>
                   </td>
                 </tr>
               <?php

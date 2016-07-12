@@ -146,7 +146,7 @@ $('#language a:first').tab('show');
       success: function (data) {
         data = $.parseJSON(data);
         $.each(data,function(i,v) {
-            console.log(v[id]);
+            console.log(v);
         });
         console.log(data);
       }

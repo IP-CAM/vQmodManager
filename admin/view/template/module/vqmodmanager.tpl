@@ -107,9 +107,9 @@
                              data-onstyle = "success"
                              data-offstyle = "danger"
                              class = "togglecontrol"
-                             data-file = "<?php echo $vxml_value['file']; ?>">
+                             data-file = "<?php echo $vxml_value['file']; ?>"
                              data-on = "<?php echo $text_vqmodon; ?>"
-                             data-off = "<?php echo $text_vqmodoff; ?>"
+                             data-off = "<?php echo $text_vqmodoff; ?>" >
                     </td>
                   </tr>              
               <?php

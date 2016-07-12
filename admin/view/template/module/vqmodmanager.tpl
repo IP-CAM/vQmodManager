@@ -139,6 +139,16 @@ $('#language a:first').tab('show');
       }
     });
   });
+
+  $(document).ready(function(ev){
+    $.ajax({
+      url: '<?php echo $allmodsController; ?>',
+      success: function (data) {
+        console.log(data);
+      }
+    });
+  })
+
 </script>
 
 <?php echo $footer; ?>

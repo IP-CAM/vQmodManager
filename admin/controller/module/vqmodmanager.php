@@ -113,6 +113,7 @@ class ControllerModuleVqmodManager extends Controller {
 		/* Vqmod Logic Start */
 
 		$data['ed_controller_url'] = $this->config->get('config_url').'admin/index.php?route=module/vqmodmanager/enableDisable&token='.$this->session->data['token'];
+        $data['$allmodsController'] = $this->config->get('config_url').'admin/index.php?route=module/vqmodmanager/moduleStatus&token='.$this->session->data['token'];
 
 		if (file_exists(DIR_APPLICATION . '../vqmod/xml/vqmod_opencart.xml')) {
 			$data['vqmods']['VQmod'] = 1;
@@ -177,6 +178,32 @@ class ControllerModuleVqmodManager extends Controller {
 		return !$this->error;
 	}
 
+	public function moduleStatus() {
+        $vqmod_dir = DIR_APPLICATION.'../vqmod/';
+        $vqmod_xml_dir = $vqmod_dir.'xml/';
+        $data['vqdir'] = scandir($vqmod_dir);
+        $vqxml = array_diff(scandir($vqmod_xml_dir,1), array('..', '.'));
+
+        $data['vxml'] = [];
+        foreach ($vqxml as $vqxml_value) {
+            $xml=simplexml_load_file($vqmod_xml_dir.$vqxml_value);
+
+            $path_parts = pathinfo($vqmod_xml_dir.$vqxml_value);
+
+            $vxml_temp['id'] = (string) $xml->id;
+            $vxml_temp['author'] = (string) $xml->author;
+            $vxml_temp['file'] = $vqxml_value;
+            if($path_parts['extension'] == 'xml') {
+                $vxml_temp['extension'] = 1;
+            } else {
+                $vxml_temp['extension'] = 0;
+            }
+            array_push($data['vxml'], $vxml_temp);
+        }
+
+        echo $data['vxml'];
+
+    }
 	
 	public function enableDisable() {
 

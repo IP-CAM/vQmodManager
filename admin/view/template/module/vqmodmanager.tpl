@@ -29,7 +29,7 @@
           <table class="table table-bordered table-hover">
             <thead>
               <tr>
-                <td>File</td>
+                <td>File </td>
                 <td>Status</td>
               </tr>
             </thead>

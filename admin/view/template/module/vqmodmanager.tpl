@@ -31,6 +31,7 @@
               <tr>
                 <td>File</td>
                 <td>Status</td>
+                <td>Action</td>
               </tr>
             </thead>
             <tbody>
@@ -52,7 +53,9 @@
                       }
                     ?>
                   </td>
-                  <td></td>
+                  <td>
+                    <span class="btn btn-sm btn-danger">Delete Cache</span>
+                  </td>
                 </tr>
               <?php
                 }

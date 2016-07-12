@@ -14,11 +14,14 @@
     </div>
   </div>
   <div class="container-fluid">
-    <?php if ($error_warning) { ?>
-    <div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> <?php echo $error_warning; ?>
+
+    <div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> Error
       <button type="button" class="close" data-dismiss="alert">&times;</button>
     </div>
-    <?php } ?>
+
+    <div class="alert alert-success"><i class="fa fa-check-circle"></i> Success
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
 
     <div class="panel panel-default">
       <div class="panel-heading">

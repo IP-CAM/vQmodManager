@@ -201,7 +201,7 @@ class ControllerModuleVqmodManager extends Controller {
             array_push($data['vxml'], $vxml_temp);
         }
 
-        echo $data['vxml'];
+        echo json_encode($data['vxml']);
 
     }
 	

@@ -38,7 +38,7 @@
                 foreach ($vqmods as $vqmods_key => $vqmods_value) {
               ?>
                 <tr>
-                  <td><b><?php echo $vqmods_key; ?> Status</b></td>
+                  <td><b><?php echo $vqmods_key; ?></b></td>
                   <td>                    
                     <?php 
                       if($vqmods_value) {

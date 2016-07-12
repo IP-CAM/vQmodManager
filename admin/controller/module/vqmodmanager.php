@@ -162,6 +162,13 @@ class ControllerModuleVqmodManager extends Controller {
             $data['success'] = '';
         }
 
+        if (isset($this->session->data['error'])) {
+            $data['error_warning'] = $this->session->data['error'];
+            unset($this->session->data['error']);
+        } else {
+            $data['error_warning'] = '';
+        }
+
 		/* Vqmod logic End */
 
 		$this->document->addStyle('https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css');
@@ -191,6 +198,7 @@ class ControllerModuleVqmodManager extends Controller {
         $this->load->language('module/vqmodmanager');
         $data['text_vqmodEnabled']         =   $this->language->get('text_vqmodEnabled');
         $data['text_vqmodDisabled']         =   $this->language->get('text_vqmodDisabled');
+        $data['text_vqmodError']         =   $this->language->get('text_vqmodError');
 
 	    $vqmod_dir = DIR_APPLICATION.'../vqmod/';
 		$vqmod_xml_dir = $vqmod_dir.'xml/';
@@ -198,17 +206,27 @@ class ControllerModuleVqmodManager extends Controller {
 		$path_parts = pathinfo($vqmod_xml_dir.$file);
 		$message = '';
 
-		if($path_parts['extension'] == 'xml') {
+        $renameFiles = '';
+
+        if($path_parts['extension'] == 'xml') {
 			$newname = basename($path_parts['filename']).".disabled";
-			rename($vqmod_xml_dir.$file, $vqmod_xml_dir.$newname);
-			$message = 'Disabled';
+			$renameFiles = rename($vqmod_xml_dir.$file, $vqmod_xml_dir.$newname);
+			if($renameFiles) {
+                $this->session->data['success'] = $data['text_vqmodEnabled'];
+            } else {
+                $this->session->data['error'] = $data['text_vqmodError'];
+            }
 		} else {
 			$newname = basename($path_parts['filename']).".xml";
-			rename($vqmod_xml_dir.$file, $vqmod_xml_dir.$newname);
-			$message = 'Enabled';
+            $renameFiles = rename($vqmod_xml_dir.$file, $vqmod_xml_dir.$newname);
+            if($renameFiles) {
+                $this->session->data['success'] = $data['text_vqmodDisabled'];
+            } else {
+                $this->session->data['error'] = $data['text_vqmodError'];
+            }
 		}
 
-        $this->session->data['success'] = $message;
+        // $this->session->data['success'] = $message;
 
 	}
 }

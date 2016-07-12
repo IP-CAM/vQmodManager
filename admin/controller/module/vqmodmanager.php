@@ -153,6 +153,15 @@ class ControllerModuleVqmodManager extends Controller {
 			}
 			array_push($data['vxml'], $vxml_temp);
 		}
+
+        if (isset($this->session->data['success'])) {
+            $data['success'] = $this->session->data['success'];
+
+            unset($this->session->data['success']);
+        } else {
+            $data['success'] = '';
+        }
+
 		/* Vqmod logic End */
 
 		$this->document->addStyle('https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css');
@@ -197,12 +206,5 @@ class ControllerModuleVqmodManager extends Controller {
 
         $this->session->data['success'] = $message;
 
-        if (isset($this->session->data['success'])) {
-            $data['success'] = $this->session->data['success'];
-
-            unset($this->session->data['success']);
-        } else {
-            $data['success'] = '';
-        }
 	}
 }
